@@ -1,0 +1,16 @@
+/**
+ * @name Remove Top Bar Theme
+ * @author Andrew Grant
+ * @description This makes the top bar thinner and allows dragging from the titlebar
+ * @version 1.0
+ */
+
+
+.withFrame-haYltI {
+    height: 0px;
+    margin-top: 4px;
+}
+
+.children-19S4PO{
+	-webkit-app-region: drag;
+}
