@@ -21,7 +21,7 @@ White channel title area can now be dragged like the top bar used to be able to.
 
 
 Before:
-![Top bar before](images/TopBarBefore.png)
+![Topbar before](images/Top_Bar_Before.png)
 After:
-![Top bar after](images/TopBarAfter.png)
+![Topbar after](images/Top_Bar_After.png)
 
