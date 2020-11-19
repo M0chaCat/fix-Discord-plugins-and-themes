@@ -3,7 +3,7 @@
 Just some things that I've made.
 
 ## Custom Avatar Shape
-Change avatar and channel masks, anything from round to square
+Change avatar and channel masks, any shape from round to square
 
 ![Custom avatar comparison](images/Custom_Avatar_Shape.png)
 
