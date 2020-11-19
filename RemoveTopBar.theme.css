@@ -2,7 +2,7 @@
  * @name Remove Top Bar Theme
  * @author Andrew Grant
  * @description This makes the top bar thinner and allows dragging from the titlebar
- * @version 1.1
+ * @version 1.2
  */
 
 
@@ -17,4 +17,9 @@
 
 .wordmarkWindows-1v0lYD .wordmark-2iDDfm .da-wordmarkWindows .da-wordmark{
 	color:transparent;
+}
+
+/* remove the following to bring back the _ □ X buttons */
+.winButton-iRh8-Z{
+	color: transparent;
 }
