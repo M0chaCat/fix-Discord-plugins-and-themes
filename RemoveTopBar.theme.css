@@ -2,24 +2,23 @@
  * @name Remove Top Bar Theme
  * @author Andrew Grant
  * @description This makes the top bar thinner and allows dragging from the titlebar
- * @version 1.3
+ * @version 1.4
  */
 
 
-.withFrame-haYltI {
+.withFrame-haYltI { /* Shrinks titlebar down to nothing */
     height: 0px;
-    margin-top: 4px;
 }
 
-.children-19S4PO{
+.children-19S4PO{ /* Reimplements lost titlebar drag functionality in the channel name view */
 	-webkit-app-region: drag;
 }
 
-.wordmarkWindows-1v0lYD{
+.wordmarkWindows-1v0lYD{ /* Removed the "Discord" text on the top left of the screen */
 	color:transparent;
 }
 
-/* remove the following to bring back the _ □ X buttons */
-.winButton-iRh8-Z{
+
+.winButton-iRh8-Z{ /* Hid the _ □ X buttons, they are visible on hover */
 	color: transparent;
 }
