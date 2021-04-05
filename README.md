@@ -25,3 +25,7 @@ Before:
 After:
 ![Topbar after](images/Top_Bar_After.png)
 
+
+## Remove Help Button
+Removes the useless help button
+![No Help Button](images/No_Help_Button.png)
