@@ -2,9 +2,9 @@
  * @name Remove Help Button Theme
  * @author Andrew Grant
  * @description This removes the "help" button shortcut
- * @version 1.0
+ * @version 2.0
  */
 
-.anchor-3Z-8Bb {
+.iconWrapper-2OrFZ1.da-iconWrapper.clickable-3rdHwn.da-clickable[aria-label="Help"]{
 	display: none;
 }
