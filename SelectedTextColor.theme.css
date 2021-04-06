@@ -2,23 +2,23 @@
  * @name Selected Text Color
  * @description This changes the highlight color of selected text
  * @author Andrew Grant
- * @version 1.0
+ * @version 1.1
  */
  
  /* The following code changes the colors based on operating system light/dark mode.
-  * You can use a plugin like TimedLightDarkMode and a program (Win10) such as 
-  * Auto Dark Mode to automate light/dark mode switching. You do not need to though. */
+  * You may use a Discord plugin like TimedLightDarkMode (by DevilBro), alongside a
+  * program such as Auto Dark Mode (Win10) to automate light/dark mode switching. */
 
  @media (prefers-color-scheme: light) { /* Color on system (not Discord's) light mode */
 	::selection {
-		background: #e0ebf9; /* Background color (hex value)*/
-		/*color: #000000; /* Text color (hex value) - default OFF */
+		background: #e0ebf9; /* Light background selection color (hex value) - default #328ffe */
+		/*color: #000000; /* DISABLED - Text color (hex value) - default #ffffff */
 	}
 }
  
  @media (prefers-color-scheme: dark) { /* Color on system (not Discord's) dark mode */
 	::selection {
-		background: #8a96a6; /* Background color (hex value)*/
-		/*color: #000000; /* Text color (hex value) - default OFF */
+		background: #8a96a6; /* Dark background selection color (hex value) - default #328ffe */
+		/*color: #000000; /* DISABLED - Text color (hex value) - default #ffffff */
 	}
 }
