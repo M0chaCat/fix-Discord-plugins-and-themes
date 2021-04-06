@@ -1,8 +1,8 @@
 /**
  * @name Remove Help Button Theme
  * @author Andrew Grant
- * @description This removes the "help" button shortcut
- * @version 2.0
+ * @description This removes the "help" button shortcut. Requires "Normalize Classes" in BetterDiscord settings to be turned ON
+ * @version 2.1
  */
 
 .iconWrapper-2OrFZ1.da-iconWrapper.clickable-3rdHwn.da-clickable[aria-label="Help"]{
