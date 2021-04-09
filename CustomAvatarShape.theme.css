@@ -2,7 +2,7 @@
  * @name CustomAvatarShape
  * @author Andrew Grant
  * @description Change the mask over user avatars and channel lists
- * @version 2.3
+ * @version 2.4
  *//*
  * Thanks to Gibbu for making the RadialStatus theme which was used as inspiration for this one
  * https://github.com/DiscordStyles/RadialStatus <- Gibbu's RadialStatus theme */
@@ -10,17 +10,23 @@
 .wrapper-3t9DeA foreignObject {
           mask: none;
 }
+
 .wrapper-3t9DeA > svg > foreignObject img {
-  border-radius: 14%; /* User Avatar - Change this value from 0% (square) to 50% (circle) */
+  border-radius: 14%; /* User avatar (right sidebar) - Change this value from 0% (square) to 50% (circle) */
+}
+
+.avatar-1BDn8e {
+	border-radius: 14%; /* User avatar (chat) - Change this value from 0% (square) to 50% (circle) */
 }
 
 .wrapper-25eVIn foreignObject {
           mask: none;
 }
+
 .wrapper-25eVIn > svg > foreignObject img {
-  border-radius: 20%; /* Channel List - Change this value from 0% (square) to 50% (circle) */
+  border-radius: 20%; /* Channel list - Change this value from 0% (square) to 50% (circle) */
 }
 
 .childWrapper-anI2G9 {
-	border-radius: 20%; /* Discord logo and channels without icons - Change this value from 0% (square) to 50% (circle) */
+	border-radius: 20%; /* Discord logo and unthemed channels - Change this value from 0% (square) to 50% (circle) */
 }
