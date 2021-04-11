@@ -27,5 +27,5 @@ After:
 
 
 ## Remove Help Button
-Removes the useless help button
+Removes the useless help button (requires "Normalize Classes" to be turned ON in BetterDiscord settings)
 ![No Help Button](images/No_Help_Button.png)
