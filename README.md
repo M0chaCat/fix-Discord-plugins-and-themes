@@ -1,9 +1,9 @@
 # Discord-plugins-and-themes
 
-Just some things that I've made.
+Just some things that I've made. All of these should work in conjunction with other themes.
 
 ## Custom Avatar Shape
-Change avatar and channel masks, any shape from round to square
+Change the masks of user avatars, channels, the add server button, the public server button, and the Discord logo
 
 ![Custom avatar comparison](images/Custom_Avatar_Shape.png)
 
