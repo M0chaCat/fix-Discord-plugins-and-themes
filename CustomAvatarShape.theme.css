@@ -2,43 +2,51 @@
  * @name CustomAvatarShape
  * @author Andrew Grant
  * @description Change the mask over user avatars and channel lists
- * @version 4.0
+ * @version 5.0
  *//*
  * Thanks to Gibbu for making the RadialStatus theme which was used as inspiration for this one
  * https://github.com/DiscordStyles/RadialStatus <- Gibbu's RadialStatus theme */
  
-.wrapper-3t9DeA foreignObject {
+:root{ /*Change these values from 0% (square) to 50% (circle) */
+    --radius: 14%;
+    --radius-large: 20%;
+}
+
+.wrapper-3t9DeA foreignObject { /* User avatar (sidebars) */
 	mask: none;
-	border-radius: 14%; /* User avatar (right sidebar) - Change this value from 0% (square) to 50% (circle) */
+	border-radius: var(--radius);
 }
 
-.avatar-1BDn8e {
-	border-radius: 14%; /* User avatar (main chat) - Change this value from 0% (square) to 50% (circle) */
+.avatar-1BDn8e { /* User avatar (main chat)*/
+	border-radius: var(--radius);
 }
 
-.wrapper-25eVIn foreignObject {
+.wrapper-25eVIn foreignObject { /* Discord logo, unthemed channels, add server button, public servers button */
 	mask: none;
-	border-radius: 20%; /* Discord logo, unthemed channels, add server button, public servers button
-					^ Change this value from 0% (square) to 50% (circle) */
+	border-radius: var(--radius-large);
 }
 
-foreignObject[mask="url(#svg-mask-avatar-status-round-80)"] {
-	mask: none; /* removes the circular mask on the user avatar overlay popup */
-}
-
-.avatarHint-1qgaV3 {
-	border-radius: 14%; /* User avatar overlay (view profile popup) - Change this value from 0% (square) to 50% (circle) */
-}
-
-.avatarContainer-28iYmV {
-	border-radius: 14%;  /* Tiny user avatar view (in voice channels) - Change this value from 0% (square) to 50% (circle) */
-}
-
-.da-avatarSpeaking {
-	border-radius: 14%; /* green speaking border over user avatar - Change this value from 0% (square) to 50% (circle) */
-}
-
-foreignObject[mask="url(#svg-mask-voice-user-summary-item)"] {
+foreignObject[mask="url(#svg-mask-avatar-status-round-80)"] { /* removes the circular mask on the user avatar overlay hover */
 	mask: none;
-	border-radius: 20%; /* NOT CURRENTLY WORKING - server popup for current users in voice channels */
+}
+
+.wrapper-3t9DeA { /* Avatar background (new style) */
+    border-radius: var(--radius);
+}
+
+.avatarHint-1E3LMl { /* Avatar overlay hover (new style) */
+    border-radius: var(--radius);
+}
+
+.avatarContainer-28iYmV {  /* Tiny user avatar view (in voice channels) */
+	border-radius: var(--radius);
+}
+
+.da-avatarSpeaking { /* Green speaking border over user avatar */
+	border-radius: var(--radius);
+}
+
+foreignObject[mask="url(#svg-mask-voice-user-summary-item)"] { /* NOT CURRENTLY WORKING - server popup for current users in voice channels */
+	mask: none;
+	border-radius: var(--radius-large);
 }
