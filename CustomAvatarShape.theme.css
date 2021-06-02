@@ -2,7 +2,7 @@
  * @name CustomAvatarShape
  * @author Andrew Grant
  * @description Change the mask over user avatars and channel lists
- * @version 5.0
+ * @version 5.1
  *//*
  * Thanks to Gibbu for making the RadialStatus theme which was used as inspiration for this one
  * https://github.com/DiscordStyles/RadialStatus <- Gibbu's RadialStatus theme */
@@ -12,7 +12,7 @@
     --radius-large: 20%;
 }
 
-.wrapper-3t9DeA foreignObject { /* User avatar (sidebars) */
+.wrapper-3t9DeA, foreignObject { /* User avatar (sidebars) */
 	mask: none;
 	border-radius: var(--radius);
 }
@@ -30,10 +30,6 @@ foreignObject[mask="url(#svg-mask-avatar-status-round-80)"] { /* removes the cir
 	mask: none;
 }
 
-.wrapper-3t9DeA { /* Avatar background (new style) */
-    border-radius: var(--radius);
-}
-
 .avatarHint-1E3LMl { /* Avatar overlay hover (new style) */
     border-radius: var(--radius);
 }
@@ -49,4 +45,8 @@ foreignObject[mask="url(#svg-mask-avatar-status-round-80)"] { /* removes the cir
 foreignObject[mask="url(#svg-mask-voice-user-summary-item)"] { /* NOT CURRENTLY WORKING - server popup for current users in voice channels */
 	mask: none;
 	border-radius: var(--radius-large);
+}
+
+.pointerEvents-2zdfdO[height="16"] {
+    fill: white;
 }
