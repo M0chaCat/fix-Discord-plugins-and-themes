@@ -3,10 +3,13 @@
 Just some things that I've made. All of these should work in conjunction with other themes.
 
 ## Custom Avatar Shape
-Change the masks of user avatars, channels, the add server button, the public server button, and the Discord logo
+Change the masks of user avatars, channels, the add server button, the public server button, the Discord logo, and more.
 
 ![Custom avatar comparison](images/Custom_Avatar_Shape.png)
 
+Before and after:
+
+![Old user popout](images/User_Popout_Before.png) ![New user popout](images/User_Popout_After.png)
 
 
 ## Selected Text Color
