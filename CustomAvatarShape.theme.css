@@ -2,7 +2,7 @@
  * @name CustomAvatarShape
  * @author Andrew Grant
  * @description Change the mask over user avatars and channel lists
- * @version 5.1
+ * @version 5.2
  *//*
  * Thanks to Gibbu for making the RadialStatus theme which was used as inspiration for this one
  * https://github.com/DiscordStyles/RadialStatus <- Gibbu's RadialStatus theme */
@@ -47,6 +47,14 @@ foreignObject[mask="url(#svg-mask-voice-user-summary-item)"] { /* NOT CURRENTLY 
 	border-radius: var(--radius-large);
 }
 
-.pointerEvents-2zdfdO[height="16"] {
-    fill: white;
+@media (prefers-color-scheme: light) { /* Color on system (not Discord's) light mode */
+    .pointerEvents-2zdfdO[height="16"] {
+        fill: white;
+    }
+}
+
+@media (prefers-color-scheme: dark) { /* Color on system (not Discord's) light mode */
+    .pointerEvents-2zdfdO[height="16"] {
+        fill: #18191C;
+    }
 }
