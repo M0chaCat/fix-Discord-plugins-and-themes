@@ -2,9 +2,9 @@
  * @name Remove Help Button Theme
  * @author Andrew Grant
  * @description This removes the "help" button shortcut
- * @version 3.0
+ * @version 3.1
  */
 
-.anchor-1MIwyf {
+.anchor-1MIwyf[tabindex="-1"]{
 	display: none;
 }
