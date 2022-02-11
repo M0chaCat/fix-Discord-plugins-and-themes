@@ -2,7 +2,7 @@
  * @name CustomAvatarShape
  * @author Andrew Grant
  * @description Change the mask over user avatars, channels, the add server button, the public server button, the Discord logo, and more.
- * @version 6.3
+ * @version 6.4
  *//*
  * Thanks to Gibbu for making the RadialStatus theme which was used as inspiration for this one
  * https://github.com/DiscordStyles/RadialStatus <- Gibbu's RadialStatus theme */
@@ -12,7 +12,8 @@
     --radius-large: 20%;
 }
 
-.wrapper-3t9DeA, foreignObject { /* User avatar (sidebars) */
+ /* User avatar (sidebars) */ /* :not() selector is to keep status masks */
+.wrapper-3t9DeA,  foreignObject:not([mask="url(#svg-mask-status-offline)"]):not([mask="url(#svg-mask-status-online-mobile)"]) {
 	mask: none;
 	border-radius: var(--radius);
 }
