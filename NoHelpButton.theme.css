@@ -2,9 +2,9 @@
  * @name Remove Help Button Theme
  * @author Andrew Grant
  * @description This removes the "help" button shortcut
- * @version 3.1
+ * @version 4.0
  */
 
-.anchor-1MIwyf[tabindex="-1"]{
+.anchor-1MIwyf[href="https://support.discord.com"] {
 	display: none;
 }
