@@ -2,28 +2,29 @@
  * @name Remove Top Bar Theme
  * @author Andrew Grant
  * @description This makes the top bar thinner and allows dragging from the titlebar
- * @version 1.5
+ * @version 2.0
  */
 
 
-.withFrame-haYltI { /* Shrinks titlebar down to nothing */
+.titleBar-1it3bQ { /* Shrinks titlebar down to nothing */
     height: 0px;
 }
 
-.wordmarkWindows-1v0lYD { /* Removed the "Discord" text on the top left of the screen */
-	color:transparent;
+.wordmark-2u86JB { /* Removes the "Discord" text on the top left of the screen */
+    display: none;
 }
 
-.winButton-iRh8-Z { /* Hid the _ □ X buttons, they are visible on hover */
+.winButton-3UMjdg { /* Hide the _ □ X buttons, they are visible on hover */
 	color: transparent;
 }
 
-/* allows button press-through on settiongs panels, https://github.com/electron/electron/issues/1354 */
-.standardSidebarView-3F1I7i, .standardSidebarView-3F1I7i * {
+/* allows button press-through on channel descriptions, and the settings panels and escape button.
+   see: https://github.com/electron/electron/issues/1354 */
+.contentColumn-1C7as6, .closeButton-PCZcma, .expandable-3CaLeS {
     -webkit-app-region: no-drag
 }
 
-/* Reimplements lost titlebar drag functionality on channel name bar and adds drag to the right panel of settings (since there is now no titlebar) */
-.children-19S4PO, .contentRegionScroller-26nc1e {
+/* Re-implements lost titlebar drag functionality on channel name bar and the right panel of settings */
+.title-31SJ6t, .contentRegion-3HkfJJ {
 	-webkit-app-region: drag;
 }
