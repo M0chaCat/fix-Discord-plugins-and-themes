@@ -2,7 +2,7 @@
  * @name Remove Top Bar Theme
  * @author Andrew Grant
  * @description This makes the top bar thinner and allows dragging from the titlebar
- * @version 2.0
+ * @version 2.1
  */
 
 
@@ -26,5 +26,15 @@
 
 /* Re-implements lost titlebar drag functionality on channel name bar and the right panel of settings */
 .title-31SJ6t, .contentRegion-3HkfJJ {
+	-webkit-app-region: drag;
+}
+
+/* Support for ChannelTabs plugin by l0c4lh057, CarJem Generations, samfundev: https://github.com/aarondoet/BetterDiscordStuff/blob/master/Plugins/ChannelTabs/ChannelTabs.plugin.js */
+
+.channelTabs-tab, .channelTabs-newTab, .channelTabs-settingsMenu {
+    -webkit-app-region: no-drag
+}
+
+.channelTabs-tabContainer {
 	-webkit-app-region: drag;
 }
