@@ -1,0 +1,11 @@
+/**
+ * @name NoInviteButton
+ * @name Remove Invite Button Theme
+ * @author Andrew Grant
+ * @description This removes the "Create Invite" button and popup
+ * @version 1.0
+ */
+
+.children-1MGS9G {
+    display: none;
+}
