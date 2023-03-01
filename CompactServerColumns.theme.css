@@ -1,0 +1,60 @@
+/**
+ * @name Compact ServerColumns
+ * @author Andrew Grant
+ * @description Modified ServerColumns to also have channel/DM panel on the left
+ * @version 1.0
+ */
+
+
+/* Grab the latest ServerColumns version */
+@import url(https://mwittrien.github.io/BetterDiscordAddons/Themes/ServerColumns/ServerColumns.css);
+
+/* ServerColumns adjustment */
+:root {
+	--columns:	3;
+	--guildsize: 50;
+	--guildgap: 3;
+	--aligndms: 1;
+}
+
+/* Align DM's with Home button */
+.tutorialContainer-1pL9QS {
+	width: calc(1px * var(--guildsize) + 12px) !important;
+}
+
+/* Move 'selected' pill to proper location when home button is pressed */
+.wrapper-1_HaEi .pill-L_aLMQ {
+    left: calc(1px * ((var(--aligndms) + ((((var(--guildsize) + 10 * var(--guildsize)/50) * (var(--columns) - 1))/2) * (1 - var(--aligndms)))) - 8)) !important;
+}
+
+/* channel list */
+.sidebar-1tnWFu {
+    position: absolute;
+    height: 60%;
+    bottom: 0;
+    z-index: 2;
+    width: 240px;
+    border-radius: 0 !important;
+}
+
+/* server list */
+.wrapper-1_HaEi {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 40%;
+    z-index: 2;
+    padding-left: 21px !important;
+    padding-right: 21px !important;
+}
+
+/* Move main windows to avoid overlap */
+.title-31SJ6t, .content-1jQy2l, .container-2cd8Mz {
+    padding-left: 240px;
+    z-index: 1;
+}
+
+/* tweak top offset of server list */
+.wrapper-1_HaEi .scroller-3X7KbA {
+    padding-top: 8px !important;
+}
