@@ -2,7 +2,7 @@
  * @name Compact ServerColumns
  * @author Andrew Grant
  * @description Modified ServerColumns to also have channel/DM panel on the left
- * @version 1.0
+ * @version 2.0
  */
 
 
@@ -11,34 +11,35 @@
 
 /* ServerColumns adjustment */
 :root {
-	--columns:	3;
+	--columns:	4;
 	--guildsize: 50;
-	--guildgap: 3;
+	--guildgap: 4;
 	--aligndms: 1;
 }
 
 /* Align DM's with Home button */
-.tutorialContainer-1pL9QS {
+.tutorialContainer__890ea {
 	width: calc(1px * var(--guildsize) + 12px) !important;
 }
 
-/* Move 'selected' pill to proper location when home button is pressed */
-.wrapper-1_HaEi .pill-L_aLMQ {
-    left: calc(1px * ((var(--aligndms) + ((((var(--guildsize) + 10 * var(--guildsize)/50) * (var(--columns) - 1))/2) * (1 - var(--aligndms)))) - 8)) !important;
+/* Home button pill relocate */
+.wrapper_a7e7a8 .pill_d1140c, .wrapper_a7e7a8 .pill__66ac8 {
+    left: -10px !important;
 }
 
 /* channel list */
-.sidebar-1tnWFu {
+.sidebar_ded4b5 {
     position: absolute;
     height: 60%;
     bottom: 0;
     z-index: 2;
-    width: 240px;
+    width: 262px;
     border-radius: 0 !important;
+    left: 0;
 }
 
 /* server list */
-.wrapper-1_HaEi {
+.wrapper_a7e7a8 {
     position: absolute;
     left: 0;
     top: 0;
@@ -48,13 +49,36 @@
     padding-right: 21px !important;
 }
 
-/* Move main windows to avoid overlap */
-.title-31SJ6t, .content-1jQy2l, .container-2cd8Mz {
-    padding-left: 240px;
+/*  message requests page */
+.content__4bf10 {
+    padding-left: 262px;
     z-index: 1;
 }
 
-/* tweak top offset of server list */
-.wrapper-1_HaEi .scroller-3X7KbA {
-    padding-top: 8px !important;
+/* channel list padding */
+.wrapper_a7e7a8 {
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+}
+
+/* Server banner resize */
+[class*=content_]>[class*=sidebar_],
+[class*=bannerImage_],
+[class*=bannerImg_] {
+    width: 262px;
+}
+
+/* User popout offset */
+#popout_19 {
+	left: 35px !important;
+}
+
+/* User volume/headphone/setting alignment */
+.withTagAsButton_cc125f, .withTagless__98b7d {
+	flex:50%;
+}
+
+/* DM list width */
+.channel_c21703 {
+	max-width:242px;
 }
