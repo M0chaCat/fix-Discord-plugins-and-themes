@@ -2,22 +2,15 @@
  * @name Selected Text Color
  * @description This changes the highlight color of selected text. Appearance aware, works with both light and dark mode
  * @author Andrew Grant
- * @version 1.3
+ * @version 2.0
  */
 
-/* The following code changes the colors based on operating system light/dark mode, and not Discord's.
- * If you want them to match, click "Appearance" in the app settings and select "Sync with computer" */
-
-@media (prefers-color-scheme: light) { 
-	::selection {
-		background: #e0ebf9; /* Background color (hex value)*/
-		/*color: #000000; /* Text color (hex value) - default OFF */
-	}
+.theme-light ::selection {
+	background: #e0ebf9; /* Background color (hex value)*/
+	/*color: #000000; /* Text color (hex value) - default OFF */
 }
-
-@media (prefers-color-scheme: dark) {
-	::selection {
-		background: #99a1ad; /* Background color (hex value)*/
-		/*color: #000000; /* Text color (hex value) - default OFF */
-	}
+	
+.theme-dark ::selection {
+	background: #3F4D5E; /* Background color (hex value)*/
+	/*color: #000000; /* Text color (hex value) - default OFF */
 }
