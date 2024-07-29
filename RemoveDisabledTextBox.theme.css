@@ -2,9 +2,9 @@
  * @name Remove Disabled Text Box Theme
  * @author Andrew Grant
  * @description This removes text boxes in channels that you do not have permission to send messages in
- * @version 1.0
+ * @version 1.1
  */
 
-.innerDisabled-2dbG11 {
+[class*="form_"]:has([class*="channelTextAreaDisabled_"]) {
 	display: none;
 }
