@@ -1,0 +1,11 @@
+/**
+ * @name Mute Channel List Emojis
+ * @author Andrew Grant
+ * @description Grays out the emojis in muted channels, just like the text 
+ * @version 1.0
+*/
+
+[class*="modeMuted_"]:has([class^="icon_"]) [class^="name_"] {
+    color: var(--channel-icon); /* need to make text darker since it is going to be lightened right after */
+    opacity: 40%;               /* this should look almost identical to default discord theme */
+}

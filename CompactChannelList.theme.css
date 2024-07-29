@@ -1,0 +1,37 @@
+/**
+ * @name Compact Channel List
+ * @author Andrew Grant
+ * @description Makes the most out of the spacing of the channel list 
+ * @version 1.0
+*/
+
+/* slide the sidebar content over */
+[class^="containerDefault_"] {
+    left: -10px;
+    margin-right: -12px;
+}
+[class^="spineBorder_"] {
+    left: 12px;
+}
+
+/* color text channel unread icons */
+[class*="modeUnreadImportant_"] [class^="icon_"] {
+    color: var(--interactive-active);
+}
+
+/* color forum and thread unread icons */
+[class*="containerDefault_"]:has([class^="spine_"]):has([class*="modeUnreadImportant_"]) [class^="spine_"] {
+    color: var(--interactive-active);
+}
+
+/* color forum channel icon and text when there is a new post */
+[class*="modeUnreadImportant_"]:has([class^="icon_"]):has([class^="text-xs/semibold_"]) {
+    [class^="icon_"], [class^="name_"] {
+        color: var(--text-brand);
+    }
+}
+
+/* fill in the text-channel icon SVG when the channel has an unread message */
+[class*="modeUnreadImportant_"]:has([class^="icon_"]) path[d^="M10.99 3.16"] {
+    d: path("M10.99 3.16A1 1 0 1 0 9 2.84L8.15 8H4a1 1 0 0 0 0 2h3.82l-.67 4H3a1 1 0 1 0 0 2h3.82l-.8 4.84a1 1 0 0 0 1.97.32L8.85 16h4.97l-.8 4.84a1 1 0 0 0 1.97.32l.86-5.16H20a1 1 0 1 0 0-2h-3.82l.67-4H21a1 1 0 1 0 0-2h-3.82l.8-4.84a1 1 0 1 0-1.97-.32L15.15 8h-4.97l.8-4.84Z");
+}
