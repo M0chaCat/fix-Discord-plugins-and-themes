@@ -1,0 +1,24 @@
+/**
+ * @name Dynamic Server Icons
+ * @description Moves servers with pings or active events to the top of the server list.
+ * @author Andrew Grant
+ * @version 1.0
+*/
+
+/* Make servers with active events slide up to the top of the server list */
+nav[class^="wrapper_"] div[class^="listItem_"]:has(div > div > div > div[class^="upperBadge_"]),
+div[class^="wrapper_"]:has(div > div > div > div[class^="upperBadge_"]) {
+    order: -1;
+}
+
+/* Make servers with pings slide up above the former */
+nav[class^="wrapper_"] div[class^="listItem_"]:has(div > div > div > div[class^="lowerBadge_"]),
+div[class^="wrapper_"]:has(div > div > div > div[class^="lowerBadge_"]) {
+    order: -2;
+}
+
+/* Make servers movable */
+nav[class^="wrapper_"] div[class^="listItem_"] + div[aria-label] {
+	display: flex;
+	flex-flow: row wrap;
+}
