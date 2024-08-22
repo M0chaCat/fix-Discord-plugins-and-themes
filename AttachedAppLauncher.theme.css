@@ -1,0 +1,17 @@
+/**
+ * @name Attached App Launcher Button
+ * @description Makes the floating channel app launcher connect to the left side of the message input bar
+ * @author Andrew Grant
+ * @version 1.0
+*/
+
+div[class^="channelAppLauncher_"] {
+    position: absolute;
+    margin-left: 0px;
+}
+div[class*="sansAttachButton_"] {
+    padding-left: 46px;
+}
+div[class^="positionLayer_"] {
+    right: calc(100vw - 600px) !important;
+}
