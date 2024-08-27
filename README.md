@@ -20,13 +20,18 @@ Highlight and font colors can both be changed in the file
 
 
 ## Remove Top Bar
-White channel title area can now be dragged like the top bar used to be able to. Buttons on the right are visible on hover
-
+Windows 10/11 Only.
+White channel title area can now be dragged like the top bar used to be able to. Moves minimize, expand, and close window decorations down to align with Discord's title buttons.
 
 Before:
 ![Topbar before](images/Top_Bar_Before.png)
 After:
 ![Topbar after](images/Top_Bar_After.png)
+
+
+## Attached Channel App Launcher
+Moves the App Launcher button and popup to left, and attaches it to the message input bar
+![Attached Channel App Launcher](images/Attached_Channel_App_Launcher.png)
 
 
 ## Remove Help Button
