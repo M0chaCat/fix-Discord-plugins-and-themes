@@ -2,13 +2,14 @@
  * @name Attached App Launcher Button
  * @description Makes the floating channel app launcher connect to the left side of the message input bar
  * @author Andrew Grant
- * @version 1.1
+ * @version 1.2
 */
 
 /* Move the app launcher to the left of the message input bar */
 div[class^="channelAppLauncher_"] {
-    position: absolute;
+    position: fixed;
     margin-left: 0px;
+    bottom: 0px;
 }
 
 /* Move the file upload button over to give room to the new app launcher */
@@ -19,4 +20,9 @@ div[class*="sansAttachButton_"] {
 /* Move the app launcher popup (and not the emoji picker popup) to align with the new app launcher location */
 div[class^="positionLayer_"]:not(div[class*="expressionPickerPositionLayer_"]) {
     right: calc(100vw - 600px) !important;
+}
+
+/* Make the "You're viewing older messages" bar stretch to the full length of the message input bar */
+div[class*="barBase_"] {
+    right: 16px;
 }
