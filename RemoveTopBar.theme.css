@@ -1,40 +1,44 @@
 /**
  * @name Remove Top Bar Theme
  * @author Andrew Grant
- * @description This makes the top bar thinner and allows dragging from the titlebar
- * @version 2.1
+ * @description Removes the top bar on Windows 10/11, and makes the title bar draggable.
+ * @version 3.0
  */
 
-
-.titleBar-1it3bQ { /* Shrinks titlebar down to nothing */
+/* Shrinks titlebar down to nothing */
+div[class*="titleBar_"] {
     height: 0px;
 }
 
-.wordmark-2u86JB { /* Removes the "Discord" text on the top left of the screen */
+/* Removes the "Discord" text on the top left of the screen */
+div[class*="wordmark_"] {
     display: none;
 }
 
-.winButton-3UMjdg { /* Hide the _ □ X buttons, they are visible on hover */
-	color: transparent;
+/* Hide the _ □ X buttons, they are visible on hover */
+div[class*=winButton_] {
+    top: 13px;
+    transform: scale(1.6);
+    padding-right: 4px;
+    right: 4px;
+    -webkit-app-region: no-drag !important;
+}
+div[class*=winButton_]:hover {
+    color: var(--currentColor);
+    background-color: transparent;
 }
 
-/* allows button press-through on channel descriptions, and the settings panels and escape button.
-   see: https://github.com/electron/electron/issues/1354 */
-.contentColumn-1C7as6, .closeButton-PCZcma, .expandable-3CaLeS {
-    -webkit-app-region: no-drag
+/* small hack to avoid https://github.com/electron/electron/issues/1354 */
+[class^="winButtonClose_"],
+[class^="closeButton_"] {
+	-webkit-app-region: no-drag;
+}
+div[class^="upperContainer_"] {
+    -webkit-app-region: drag;
+    width: calc(100% - 96px);
 }
 
-/* Re-implements lost titlebar drag functionality on channel name bar and the right panel of settings */
-.title-31SJ6t, .contentRegion-3HkfJJ {
-	-webkit-app-region: drag;
-}
-
-/* Support for ChannelTabs plugin by l0c4lh057, CarJem Generations, samfundev: https://github.com/aarondoet/BetterDiscordStuff/blob/master/Plugins/ChannelTabs/ChannelTabs.plugin.js */
-
-.channelTabs-tab, .channelTabs-newTab, .channelTabs-settingsMenu {
-    -webkit-app-region: no-drag
-}
-
-.channelTabs-tabContainer {
-	-webkit-app-region: drag;
+/* revert offset when thread/forum channel is open */
+div[class*="threadSidebarOpen_"] > div > section > div[class^="upperContainer_"] {
+    width: 100%;
 }
