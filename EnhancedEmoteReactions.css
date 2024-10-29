@@ -2,8 +2,8 @@
  * @name Enhanced Emote Reactions
  * @description Increases the visibility of emoji reactions, as well as removes the count of reactions when there is only one
  * @author Andrew Grant
- * @version 1.0
- */
+ * @version 1.1
+*/
 
 [class^=reaction_] .emoji {
     width: 1.25rem;
@@ -19,8 +19,13 @@
 
 [class^=reactionCount_] {
     margin-left: .2rem;
+    font-size: 0.85rem;
 }
 
 [class^=reactionInner_][aria-label*=" 1 reaction"] [class^=reactionCount_], [class^=reactionInner_][aria-label*=" 1 super reaction"] [class^=reactionCount_] {
     display: none;
+}
+
+div[class^=reaction_] {
+    padding-bottom: 0;
 }
