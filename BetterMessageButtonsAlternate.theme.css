@@ -2,19 +2,23 @@
  * @name Better Message Buttons Alternate
  * @description Organizes the message buttons in a grid, with Reply, Edit, and Forward buttons separated
  * @author Andrew Grant
- * @version 1.0
+ * @version 2.0
 */
 
-div[class^="buttonsInner_"] {
-  grid: repeat(2, 32px) / auto-flow 32px;
-  grid-auto-flow: column;
-  height: 100%;
-  transform: translateX(-46px);
+:root {
+  --msg-solo-button-width: 36px;
+  --msg-grid-button-padding: 32px;
+  --msg-grid-columns: 2;
+  --msg-button-height: 64px;
+  --msg-button-border-radius: 8px;
+  --msg-section-spacing: 12px;
 }
 
-div[class^="buttonsContainer_"] div[class^="wrapper_"] {
-  height: 100%;
-  top: -26px;
+div[class^="buttonsInner_"] {
+  grid: repeat(var(--msg-grid-columns), var(--msg-grid-button-padding)) / auto-flow var(--msg-grid-button-padding);
+  grid-auto-flow: column;
+  transform: translateX(calc((var(--msg-section-spacing) + var(--msg-solo-button-width)) * -1));
+  border-radius: var(--msg-button-border-radius);
 }
 
 /* don't make disconnected buttons have hover styling  */
@@ -25,35 +29,31 @@ div[class^="buttonsInner_"]:has(div[aria-label="Forward"]:hover) {
   box-shadow: var(--elevation-stroke);
 }
 
-div[class^="buttonsInner_"] div[class^="wrapper_"] {
-  height: 96px;
-}
-
 div[aria-label="Reply"], div[aria-label="Edit"], div[aria-label="Forward"] {
   order: 1;
   grid-row: span 2;
-  height: 64px;
-  width: 36px;
+  height: var(--msg-button-height);
+  width: var(--msg-solo-button-width);
   border: 1px solid var(--border-faint);
-  border-radius: 8px;
+  border-radius: var(--msg-button-border-radius);
   position: absolute;
   box-shadow: var(--shadow-low);
   background: var(--background-nested-floating);
-  right: -50px;
+  right: calc((var(--msg-section-spacing) + var(--msg-solo-button-width)) * -1);
 }
 
 div[aria-label="Forward"] {
-  left: -50px;
+  left: calc((var(--msg-section-spacing) + var(--msg-solo-button-width)) * -1);
 }
 
 /* for use with ShowAllMessageButtons plugin */
 div[class^="buttonsInner_"]:has(div[aria-label="Edit"]):has(div[aria-label="Reply"]) {
-  transform: translateX(-96px);
+  transform: translateX(calc(((var(--msg-section-spacing) * 2) + (var(--msg-solo-button-width) * 2)) * -1));
 }
 
 /* for use with ShowAllMessageButtons plugin */
 div[class^="buttonsInner_"]:has(div[aria-label="Edit"]) div[aria-label="Reply"] {
-  right: -100px;
+  right: calc(((var(--msg-section-spacing) * 2) + (var(--msg-solo-button-width) * 2)) * -1);
 }
 
 div[aria-label="Reply"]:hover, div[aria-label="Edit"]:hover, div[aria-label="Forward"]:hover {
