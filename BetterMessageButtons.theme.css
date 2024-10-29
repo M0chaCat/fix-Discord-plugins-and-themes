@@ -1,0 +1,63 @@
+/**
+ * @name Better Message Buttons
+ * @description Organizes the message buttons in a grid, with Reply and Edit buttons separated
+ * @author Andrew Grant
+ * @version 1.0
+*/
+
+div[class^="buttonsInner_"] {
+  grid: repeat(2, 32px) / auto-flow 32px;
+  grid-auto-flow: column;
+  height: 100%;
+  transform: translateX(-46px);
+}
+
+div[class^="buttonsContainer_"] div[class^="wrapper_"] {
+  height: 100%;
+  top: -26px;
+}
+
+/* don't make disconnected buttons have hover styling  */
+div[class^="buttonsInner_"]:has(div[aria-label="Reply"]:hover),
+div[class^="buttonsInner_"]:has(div[aria-label="Edit"]:hover) {
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--elevation-stroke);
+}
+
+div[class^="buttonsInner_"] div[class^="wrapper_"] {
+  height: 96px;
+}
+
+div[aria-label="Reply"], div[aria-label="Edit"] {
+  order: 1;
+  grid-row: span 2;
+  height: 64px;
+  width: 36px;
+  border: 1px solid var(--border-faint);
+  border-radius: 8px;
+  position: absolute;
+  box-shadow: var(--shadow-low);
+  background: var(--background-nested-floating);
+  right: -50px;
+}
+
+/* for use with ShowAllMessageButtons plugin */
+div[class^="buttonsInner_"]:has(div[aria-label="Edit"]):has(div[aria-label="Reply"]) {
+  transform: translateX(-96px);
+}
+
+/* for use with ShowAllMessageButtons plugin */
+div[class^="buttonsInner_"]:has(div[aria-label="Edit"]) div[aria-label="Reply"] {
+  right: -100px;
+}
+
+div[aria-label="Reply"]:hover, div[aria-label="Edit"]:hover {
+  background: var(--background-nested-floating);
+  box-shadow: var(--elevation-stroke), var(--elevation-medium);
+  border: 1px solid var(--border-subtle);
+  opacity: 1;
+}
+
+div[class*="popoverReactionHoverBar_"] > div[class^="separator_"] {
+  display: none;
+}
