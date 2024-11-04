@@ -1,0 +1,27 @@
+/**
+ * @name Condense Nitro Fill
+ * @author Andrew Grant
+ * @description Condenses Nitro fill bar from two lines to one.
+ * @version 1.0
+*/
+
+/* Hide "GOAL: LVL X" text */
+[class^="goalTextContainer_"] {
+    display:none;
+}
+
+/* position fill bar alongside boost text */
+[data-list-item-id^="channels___boosts-"] {
+    [class^="textArea_"] {
+        position: absolute;
+        margin-left:0;
+        z-index: 3;
+    }
+    [class^="progressBarContainer_"] {
+        margin: 9.5px 0px 8px 84px;
+        width: calc(100% - 84px);
+    }
+    [class^="progressBarContainer_"]:has(span[class^="tadaIcon_"]) {
+        margin: 9.5px 0px 8px 74px;
+    }
+}
