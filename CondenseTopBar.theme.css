@@ -1,0 +1,102 @@
+/**
+ * @name Condense Top Bar
+ * @author Andrew Grant
+ * @description Condenses top bar on Windows 10/11, and makes the title bar draggable.
+ * @version 1.0
+*/
+
+:root {
+    --ctb-main-top-margin: 0px;
+    --ctb-winButton-transform: scale(1.25);
+    --ctb-winButton-Y: 8px;
+    --ctb-winButton-spacing: 2.5px;
+    --ctb-winButton-offset: 5px;
+    --ctb-winButton-color: var(--interactive-normal);
+    --ctb-winButton-hover-color: var(--interactive-hover);
+    --ctb-winButton-thread-open-offset: 90px;
+    --ctb-icon-spacing: 0px 2.5px;
+    --ctb-channel-name-divider-height: 18px;
+    --ctb-channel-name-spacing: 0px;
+    --ctb-channel-name-padding: 0px 8px 0px 0px;
+    --ctb-channel-name-max-height: 36px;
+    --ctb-channel-name-icon-transform: scale(0.8);
+    --ctb-header-padding: 6px 10px;
+}
+
+/* Shrinks titlebar down to nothing */
+div[class*="titleBar_"] {
+    height: 0px;
+    margin-top: var(--ctb-main-top-margin);
+}
+.platform-win div[class^="sidebar_"] {
+    border-radius: 0px;
+}
+
+/* Removes the "Discord" text on the top left of the screen */
+div[class*="wordmark_"] {
+    display: none;
+}
+
+/* Reposition the _ □ X buttons */
+div[class*=winButton_] {
+    color: var(--ctb-winButton-color);
+    top: var(--ctb-winButton-Y);
+    transform: var(--ctb-winButton-transform);
+    margin-right: var(--ctb-winButton-spacing);
+    right: var(--ctb-winButton-offset);
+    -webkit-app-region: no-drag !important;
+}
+div[class*=winButton_]:hover {
+    color: var(--ctb-winButton-hover-color);
+    background-color: transparent;
+}
+
+/* small hack to avoid https://github.com/electron/electron/issues/1354 */
+[class^="winButtonClose_"],
+[class^="closeButton_"] {
+	-webkit-app-region: no-drag;
+}
+div[class^="upperContainer_"] {
+    -webkit-app-region: drag;
+    width: calc(100% - var(--ctb-winButton-thread-open-offset));
+}
+
+/* revert offset when thread/forum channel is open */
+div[class*="threadSidebarOpen_"] > div > section > div[class^="upperContainer_"] {
+    width: 100%;
+}
+
+/* revert offset when the SidebarChat plugin channel is open */
+div[class^="content_"]:has(div[class^="chatLayerWrapper_"]) div[class^="chat_"] > div > section > div[class^="upperContainer_"] {
+    width: 100%;
+}
+
+/* Condense top bar */
+div[class^="subtitleContainer_"] div[class*="iconWrapper_"],
+div[class^="subtitleContainer_"] div[class*="search_"] {
+    margin: var(--ctb-icon-spacing);
+}
+div[class^="subtitleContainer_"] div[class*="divider_"] {
+    height: var(--ctb-channel-name-divider-height);
+    margin: var(--ctb-channel-name-divider-spacing);
+}
+header[class^="header_"] {
+    padding: var(--ctb-header-padding);
+    min-height: var(--ctb-channel-name-max-height);
+    max-height: var(--ctb-channel-name-max-height);
+}
+section[class*="container_"] {
+    svg {
+        transform: var(--ctb-channel-name-icon-transform);
+    }
+    svg[class^="caret_"] {
+        transform: scale(1.5);
+    }
+    padding: var(--ctb-channel-name-padding);
+    min-height: var(--ctb-channel-name-max-height);
+    max-height: var(--ctb-channel-name-max-height);
+}
+nav[class^="privateChannels_"] div[class^="searchBar_"] {
+    padding: 0px 6px;
+    max-height: var(--ctb-channel-name-max-height);
+}
