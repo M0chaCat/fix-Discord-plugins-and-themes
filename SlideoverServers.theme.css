@@ -1,23 +1,27 @@
 /**
  * @name Slideover Servers
  * @author Andrew Grant
- * @description 
- * @version 1.0
+ * @description Turns the server list into a grid that slides out on hover.
+ * @version 1.1
 */
 
 :root {
-    --sos-number-of-rows: 30;
+    --sos-number-of-rows: 10;
     --sos-home-button-offset: 26px;
+    --sos-server-expand-width: 220px;
+    --sos-sidebar-collapse-width: 92px;
 }
 
+/* attach home, Discover, and "add server" buttons to top of screen */
 [class^="tutorialContainer_"] {
     position: fixed;
     top: var(--sos-home-button-offset);
 }
+
+/* align Discover footer with home and "add server" buttons */
 [class^="tutorialContainer_"]:has([class^="circleIconButton_"]) {
     left: 72px;
 }
-
 [class^="footer_"] {
     position: absolute;
     top: -56px;
@@ -25,27 +29,33 @@
     left: 144px;
 }
 
+/* offset server scroll to account for attached buttons */
 nav[class*="guilds_"] {
     padding-top: 60px;
 }
 
+/* change server list to allow for wrapping */
 nav[class^="wrapper_"] div[class^="listItem_"] + div[aria-label] {
     display: flex;
     flex-flow: column wrap;
 }
 
+/* rows cannot be calculated with pure CSS, '--sos-number-of-rows' needs to be set */
 div[aria-label="Servers"] {
     height: calc(var(--sos-number-of-rows) * 56px);
 }
 
+/* expand server list on hover */
 nav[class^="wrapper_"]:hover {
-    width: 220px;
+    width: var(--sos-server-expand-width);
 }
 
+/* collapse sidebar on hover */
 nav[class^="wrapper_"]:hover + div [class^="sidebar_"] {
-    width: 92px;
+    width: var(--sos-sidebar-collapse-width);
 }
 
+/* remove unread mention bottom and top pills */
 [class^="unreadMentionsIndicator"] {
     display: none;
 }
