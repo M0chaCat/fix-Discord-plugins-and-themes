@@ -1,0 +1,51 @@
+/**
+ * @name Slideover Servers
+ * @author Andrew Grant
+ * @description 
+ * @version 1.0
+*/
+
+:root {
+    --sos-number-of-rows: 30;
+    --sos-home-button-offset: 26px;
+}
+
+[class^="tutorialContainer_"] {
+    position: fixed;
+    top: var(--sos-home-button-offset);
+}
+[class^="tutorialContainer_"]:has([class^="circleIconButton_"]) {
+    left: 72px;
+}
+
+[class^="footer_"] {
+    position: absolute;
+    top: -56px;
+    padding: 0px;
+    left: 144px;
+}
+
+nav[class*="guilds_"] {
+    padding-top: 60px;
+}
+
+nav[class^="wrapper_"] div[class^="listItem_"] + div[aria-label] {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+div[aria-label="Servers"] {
+    height: calc(var(--sos-number-of-rows) * 56px);
+}
+
+nav[class^="wrapper_"]:hover {
+    width: 220px;
+}
+
+nav[class^="wrapper_"]:hover + div [class^="sidebar_"] {
+    width: 92px;
+}
+
+[class^="unreadMentionsIndicator"] {
+    display: none;
+}
