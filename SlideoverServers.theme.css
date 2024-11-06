@@ -2,7 +2,7 @@
  * @name Slideover Servers
  * @author Andrew Grant
  * @description Turns the server list into a grid that slides out on hover.
- * @version 1.1
+ * @version 1.2
 */
 
 :root {
@@ -45,9 +45,20 @@ div[aria-label="Servers"] {
     height: calc(var(--sos-number-of-rows) * 56px);
 }
 
-/* expand server list on hover */
+/* Alow guild separator to expand on hover */
+[class^="guildSeparator_"] {
+    position:absolute;
+    width: 40px;
+    left: 16px;
+    top: -2px;
+}
+
+/* expand server list and guild separator on hover */
 nav[class^="wrapper_"]:hover {
     width: var(--sos-server-expand-width);
+    [class^="guildSeparator_"] {
+        width: 182px;
+    }
 }
 
 /* collapse sidebar on hover */
