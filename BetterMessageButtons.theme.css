@@ -2,7 +2,7 @@
  * @name Better Message Buttons
  * @description Organizes the message buttons in a grid, with Reply and Edit buttons separated
  * @author Andrew Grant
- * @version 2.0
+ * @version 2.1
 */
 
 :root {
@@ -12,12 +12,13 @@
   --msg-button-height: 64px;
   --msg-button-border-radius: 8px;
   --msg-section-spacing: 12px;
+  --msg-offset-Y: 0px;
 }
 
 div[class^="buttonsInner_"] {
   grid: repeat(var(--msg-grid-columns), var(--msg-grid-button-padding)) / auto-flow var(--msg-grid-button-padding);
   grid-auto-flow: column;
-  transform: translateX(calc((var(--msg-section-spacing) + var(--msg-solo-button-width)) * -1));
+  transform: translateX(calc(((var(--msg-section-spacing) / 2) + var(--msg-solo-button-width)) * -1)) translateY(calc(var(--msg-offset-Y) * -1));
   border-radius: var(--msg-button-border-radius);
 }
 
